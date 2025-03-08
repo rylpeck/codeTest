@@ -75,9 +75,10 @@ def random_order_simulation(order_book, duration=5):
 order_book = OrderBook()
 threads = [threading.Thread(target=random_order_simulation, args=(order_book, 5)) for _ in range(3)]  # timer to only run for 5 seconds
 
-
+#star them
 for thread in threads:
     thread.start()
 
+#will have them finish up when the random order sim is done
 for thread in threads:
     thread.join()
